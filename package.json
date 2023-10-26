@@ -1,0 +1,21 @@
+{
+  "name": "k3-api",
+  "version": "1.1.1",
+  "description": "aplikasi rest api nya aplikasi k3 android flutter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "indira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "express": "^4.18.2",
+    "jimp": "^0.22.10",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.2",
+    "nodemon": "^3.0.1"
+  }
+}
