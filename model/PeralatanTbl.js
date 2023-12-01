@@ -25,6 +25,7 @@ class PeralatanTbl {
     async simpan(form_data) {
         const id = randomAngka(1000000009, 9999999999);
 
+
         const [{ affectedRows }] = await pool_db.execute(`
             INSERT INTO peralatan (id_peralatan, nama_peralatan, deskripsi)
                 VALUES
@@ -41,6 +42,7 @@ class PeralatanTbl {
             id: id, status: "gagal"
         }
     }
+
     async update(id_peralatan, form_data) {
         const [{ affectedRows }] = await pool_db.execute(`
             UPDATE peralatan SET nama_peralatan=?, deskripsi=?

@@ -11,7 +11,7 @@ class SlideShowTbl {
     async save(form_data) {
         const id = randomAngka(1000000, 9999999);
         const [{ affectedRows }] = await pool_db.execute(
-            `INSERT INTO slide_SHOW (id_slide_show, deskripsi) 
+            `INSERT INTO slide_show (id_slide_show, deskripsi) 
                 VALUES (?,?)
             `, [id, form_data.deskripsi]);
         if (affectedRows > 0) {

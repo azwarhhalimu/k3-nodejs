@@ -5,7 +5,11 @@ const bodyparser = require("body-parser");
 const router = require("./routing/router");
 const img_routing = require("./routing/img-router");
 const public_router = require("./routing/router-public");
+const auth_router = require("./routing/auth-router");
 
+let moment = require("moment-timezone");
+const AuthLogin = require("./extensi/AuthLogin");
+moment.tz.setDefault("Asia/Makassar");
 
 // config 
 app.get("/", (req, res) => {
@@ -15,7 +19,10 @@ app.use(cors());
 app.use(express.Router());
 app.use(bodyparser())
 app.set(express.urlencoded({ extended: false }))
-app.use("/admin", router)
+
+
+app.use("/auth", auth_router)
+app.use("/admin", AuthLogin.check, router)
 app.use("/images", img_routing)
 app.use("/public", public_router);
 

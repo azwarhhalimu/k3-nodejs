@@ -39,7 +39,7 @@ class TipsTbl {
     }
     async update(id, form_data) {
         const [{ affectedRows }] = await pool_db.execute(
-            `UPDATE tps SET judul=?, deskripsi=?
+            `UPDATE tips SET judul=?, deskripsi=?
                 WHERE id_tips=?
             `,
             [form_data.judul, form_data.deskripsi, id])

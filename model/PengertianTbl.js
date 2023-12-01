@@ -36,6 +36,10 @@ class PengertianTbl {
 
             formData.judul, formData.isi, id_pengertian
         ])
+        if (affectedRows > 0) {
+            return { status: "sukses", id: id_pengertian }
+        }
+        return { status: "gagal", id: id_pengertian }
     }
     async delete(id_pengertian) {
         const [{ affectedRows }] = await pool_db.execute(

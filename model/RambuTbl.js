@@ -45,10 +45,11 @@ module.exports = class RambuTbl {
         }
     }
     async update(id_rambu, form_data) {
+        console.log(form_data);
         const [{ affectedRows }] = await pool_db.execute(
             `UPDATE rambu_rambu SET nama_rambu=?, deskripsi=?, warna=? 
                 WHERE id_rambu=?
-            `, [form_data.nama_rambu, form_data.deskripsi, form_data.warna]);
+            `, [form_data.nama_rambu, form_data.deskripsi, form_data.warna, id_rambu]);
 
         if (affectedRows > 0) {
             return {
