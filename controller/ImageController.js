@@ -20,7 +20,7 @@ class Images {
                 console.log(`TERJADI ERRROR ${err}`)
             }
             else {
-                // console.log(`sukses`)
+                console.log(`sukses`)
                 res.setHeader('Content-Type', path == "rambu-rambu" ? 'image/png' : 'image/jpeg');
                 res.status(200).end(buffer);
             }

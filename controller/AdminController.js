@@ -8,8 +8,8 @@ const PeralatanTbl = require("../model/PeralatanTbl");
 const TipsTbl = require("../model/TipsTbl");
 const RambuTbl = require("../model/RambuTbl");
 const SlideShowTbl = require("../model/SlideShowTbl");
-const { type } = require("os");
 const DashboardModel = require("../model/DashboardModel");
+const VideoTbl = require("../model/VideoTbl");
 class AdminController {
     async getDasboard(req, res) {
         const data = await DashboardModel.get();
@@ -317,6 +317,30 @@ class AdminController {
             status: "data_deleted"
         })
     }
+
+    async saveVideo(req, res) {
+        console.log(req.body);
+        const save = await VideoTbl.saveVideo(req.body);
+
+        res.json({
+            status: "data_saved"
+        })
+    }
+    async getVideo(req, res) {
+        const data = await VideoTbl.getVideo();
+        console.log(data);
+        res.json({
+            status: "success",
+            data: data,
+        })
+    }
+    async deleteVideo(req, res) {
+        const hapus = await VideoTbl.deleteVideo(req.params.id);
+        res.json({
+            status: hapus ? "sukses" : "gagal"
+        })
+    }
+
 }
 
 module.exports = AdminController;

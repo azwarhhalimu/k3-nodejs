@@ -12,4 +12,6 @@ public_router.get("/rambu-rambu/:id", PublicController.lihatRambu);
 public_router.get("/pengertian/:id", PublicController.getSinglePengertian);
 public_router.get("/peralatan/:id", PublicController.getPeralatanSingle);
 public_router.get("/tips/:id", PublicController.getSingleTips);
+public_router.get("/video", PublicController.getVideo);
+public_router.get("/video/:id", PublicController.getVideoSingle);
 module.exports = public_router;

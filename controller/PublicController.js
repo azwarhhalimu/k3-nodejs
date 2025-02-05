@@ -64,6 +64,19 @@ class PublicController {
             peralatan: peralatan,
         });
     }
+    async getVideo(req, res) {
+        const data = await HomeMdl.video();
+        res.json({
+            data: data,
+        })
+    }
+    async getVideoSingle(req, res) {
+
+        const data = await HomeMdl.getSingleVideo(req.params.id);
+        res.json({
+            data: data,
+        })
+    }
 }
 
 module.exports = new PublicController();

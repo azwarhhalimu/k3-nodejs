@@ -38,7 +38,15 @@ class HomeMdl {
             id_peralatan: list.id_peralatan,
             nama_peralatan: list.nama_peralatan,
         }))
-        return data;a
+        return data; a
+    }
+    async video() {
+        const [data] = await pool_db.query(`SELECT * FROM video`)
+        return data;
+    }
+    async getSingleVideo(id) {
+        const [[data]] = await pool_db.query(`SELECT * FROM video WHERE id_video=?`, [id]);
+        return data;
     }
 }
 module.exports = new HomeMdl;

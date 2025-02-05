@@ -38,4 +38,8 @@ router.get("/slide-show", AdminController.getSlideShow);
 router.post("/slide-show", uploadFotoPengertian.single("foto"), AdminController.saveSlideShow);
 router.delete("/slide-show/:id", AdminController.deleteSlideShow);
 
+router.post('/video', AdminController.saveVideo);
+router.get('/video', AdminController.getVideo);
+router.delete('/video/:id', AdminController.deleteVideo);
+
 module.exports = router;
